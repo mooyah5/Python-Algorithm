@@ -24,16 +24,31 @@
 # print(binary_search(M, arr, 0, N-1) + 1)  # arr, start, end
 
 # 2) while
+# N, M = map(int, input().split())
+# arr = list(map(int, input().split()))
+# arr.sort()
+# s, e = 0, N-1
+# while (s <= e):
+#     mid = (s+e) // 2
+#     if arr[mid] == M:
+#         print(mid+1)
+#         break
+#     elif arr[mid] > M:
+#         e = mid - 1
+#     else:
+#         s = mid + 1
+
+
+# 3) 0725 재도전
 N, M = map(int, input().split())
 arr = list(map(int, input().split()))
 arr.sort()
-s, e = 0, N-1
-while (s <= e):
-    mid = (s+e) // 2
-    if arr[mid] == M:
-        print(mid+1)
+i = N // 2
+while 0 <= i < N:
+    if arr[i] == M:
+        print(i + 1)
         break
-    elif arr[mid] > M:
-        e = mid - 1
+    elif arr[i] < M:
+        i += 1
     else:
-        s = mid + 1
+        i -= 1
