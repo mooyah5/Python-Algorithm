@@ -33,8 +33,8 @@
 N, M = map(int, input().split())
 arr = [int(input()) for i in range(N)]
 arr.sort(reverse=True)
-s = 0
-e = sum(arr) // 2
+s = 1  # Error (Zero Division): start가 0이면 mid가 0이 될 수 있다.
+e = sum(arr) // N
 largest = -1
 while s <= e:
     mid = (s + e) // 2
