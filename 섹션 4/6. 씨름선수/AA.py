@@ -11,7 +11,7 @@
 # 출력
 # 선발 최대 인원을 출력하세용
 
-# 1. 이중 for문
+### 1. 이중 for문
 # N = int(input())
 # arr = [list(map(int, input().split())) for _ in range(N)]
 # arr = sorted(arr, key=lambda x: (x[0], x[1]))
@@ -26,14 +26,26 @@
 #         cnt += 1
 # print(cnt)
 
-# 2. 더 간단히 (내림차순 후 최대 몸무게와 비교)
+### 2. 더 간단히 (내림차순 후 최대 몸무게와 비교)
+# N = int(input())
+# arr = [list(map(int, input().split())) for _ in range(N)]
+# arr = sorted(arr, key=lambda x: (-x[0], -x[1]))
+# cnt = 0
+# largest = -1
+# for a in arr:
+#     if a[1] > largest:
+#         largest = a[1]
+#         cnt += 1
+# print(cnt)
+
+### 3. 230726 재도전
 N = int(input())
-arr = [list(map(int, input().split())) for _ in range(N)]
+arr = [list(map(int, input().split())) for i in range(N)]
 arr = sorted(arr, key=lambda x: (-x[0], -x[1]))
-cnt = 0
 largest = -1
-for a in arr:
-    if a[1] > largest:
-        largest = a[1]
+cnt = 0
+for i in range(N):
+    if arr[i][1] > largest:
         cnt += 1
+        largest = arr[i][1]
 print(cnt)
